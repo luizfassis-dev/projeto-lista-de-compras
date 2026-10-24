@@ -1,0 +1,66 @@
+/* Estilos globais e de layout (mobile-first) */
+body {
+  background-color: var(--background-primary);
+  color: var(--content-primary);
+  font: var(--font-paragraph);
+}
+
+.header {
+  display: none; /* No mobile o Figma não mostra o logo */
+}
+
+.container {
+  width: 100%;
+  max-width: calc(627px + 4rem); /* 627px de conteúdo + padding lateral */
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Espaçamentos verticais entre os blocos, medidos no Figma */
+.title {
+  margin-top: 1rem;
+}
+
+.add-item {
+  margin-top: 2.75rem; /* 44px */
+}
+
+.list {
+  margin-top: 2.5rem; /* 40px */
+}
+
+.alert {
+  margin-top: 2.25rem; /* 36px */
+}
+
+/* Esconde visualmente, mas leitores de tela continuam lendo */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Foco visível só para navegação por teclado */
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .header {
+    display: flex;
+    justify-content: center;
+    padding-top: 1.5rem;
+  }
+
+  .container {
+    padding-top: 3.875rem; /* 62px entre o logo e o "Voltar" */
+  }
+}

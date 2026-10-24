@@ -1,0 +1,189 @@
+/* Componentes do Style Guide: cada bloco é uma peça reutilizável */
+
+/* ---------- Link "Voltar" ---------- */
+.back-link {
+  display: inline-flex;
+  gap: var(--gap-2xs);
+  font: var(--font-link);
+  color: var(--color-brand);
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Título ---------- */
+.title {
+  font: var(--font-title);
+  color: var(--content-primary);
+}
+
+/* ---------- Formulário de adicionar item ---------- */
+.add-item {
+  display: flex;
+  flex-direction: column; /* mobile: campo e botão empilhados */
+  gap: var(--component-m);
+}
+
+/* ---------- Text field ---------- */
+.input {
+  height: 44px;
+  padding: 0 var(--component-m);
+  background-color: var(--background-secondary);
+  border: 2px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  font: var(--font-input);
+  color: var(--content-primary);
+  transition: border-color 0.15s;
+}
+
+.input::placeholder {
+  color: var(--content-tertiary);
+}
+
+.input:hover {
+  border-color: var(--border-hover);
+}
+
+/* A borda rosa já indica o foco, então o outline padrão sai */
+.input:focus {
+  outline: none;
+  border-color: var(--color-brand);
+}
+
+/* ---------- Button ---------- */
+.button {
+  height: 44px;
+  padding: 0 1.5rem;
+  background-color: var(--color-brand);
+  border-radius: var(--radius-md);
+  font: var(--font-label);
+  color: var(--content-always-white);
+  transition: background-color 0.15s;
+}
+
+.button:hover {
+  background-color: var(--color-brand-hover);
+}
+
+/* ---------- Lista e item ---------- */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* 12px */
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem; /* mobile: 12px; no desktop fica mais baixo */
+  background-color: var(--background-secondary);
+  border-radius: var(--radius-md);
+}
+
+/* O label envolve checkbox + texto: clicar no nome também marca o item */
+.item-label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0; /* permite quebrar nomes longos dentro do flex */
+  cursor: pointer;
+}
+
+.item-name {
+  font: var(--font-paragraph);
+  color: var(--content-secondary);
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Checkbox customizado ---------- */
+.checkbox {
+  appearance: none; /* remove o visual nativo e mantém o comportamento */
+  flex-shrink: 0;
+  width: var(--component-m);
+  height: var(--component-m);
+  background-color: var(--background-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+
+.checkbox:hover {
+  border-color: var(--border-hover);
+}
+
+.checkbox:checked {
+  background: var(--color-brand) url("../assets/icons/check.svg") center / 12px no-repeat;
+  border-color: var(--color-brand);
+}
+
+/* ---------- Botão de ícone (lixeira) ---------- */
+.icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radius-md);
+  color: var(--content-placeholder);
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.icon-button:hover {
+  background-color: var(--background-primary);
+  color: var(--color-danger);
+}
+
+/* ---------- Alert ---------- */
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-2);
+  padding: 0.75rem;
+  background-color: var(--color-danger);
+  border-radius: var(--radius-md);
+  color: var(--content-always-white);
+}
+
+/* display: flex acima venceria o atributo hidden; isto garante que ele funcione */
+.alert[hidden] {
+  display: none;
+}
+
+.alert-icon {
+  flex-shrink: 0;
+}
+
+.alert-message {
+  flex: 1;
+  font: var(--font-label);
+}
+
+.alert-close {
+  display: flex;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+}
+
+/* ---------- Desktop ---------- */
+@media (min-width: 768px) {
+  .add-item {
+    flex-direction: row;
+  }
+
+  .input {
+    flex: 1;
+  }
+
+  .button {
+    width: 160px;
+  }
+
+  .item {
+    padding: 0.5rem 0.75rem;
+  }
+}
