@@ -33,6 +33,15 @@ function createItemElement(item) {
   
   const name = pattern.querySelector(".item-name")
   name.textContent = item.name 
+  
+  const checkbox = pattern.querySelector(".item-label .checkbox")
+  checkbox.checked = item.checked
+
+  const li = pattern.querySelector(".item")
+  li.dataset.id = item.id
+
+  const iconButton = pattern.querySelector(".icon-button")
+  iconButton.setAttribute("aria-label", `Remover ${item.name}`)
 
   return pattern
 
@@ -45,8 +54,8 @@ function createItemElement(item) {
  */
 export function renderList(items) {
 
-  elements.list.splice(0,elements.list.length)
-  items.forEach((item, index) => {
+  elements.list.replaceChildren()
+  items.forEach((item) => {
     const listElement = createItemElement(item)
     elements.list.append(listElement)
     
