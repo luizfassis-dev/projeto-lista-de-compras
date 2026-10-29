@@ -18,7 +18,9 @@
  * @returns {string}     ex.: "Café preto"
  */
 export function normalizeName(name) {
-  // TODO (tarefa 2)
+  name = name
+  .trim()
+
   return name;
 }
 
@@ -30,9 +32,22 @@ export function normalizeName(name) {
  * @param {Array<{id: string, name: string, checked: boolean}>} items  a lista atual
  * @returns {boolean}
  */
+
+function toComparable(name) {
+    return normalizeName(name)
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+  }
+
 export function isValidName(name, items) {
-  // TODO (tarefa 2)
-  return true;
+  const comparable = toComparable(name)
+  if(comparable === ""){
+    return false
+  }
+  return (!items.some((item) => {
+    return toComparable(item.name) === comparable
+  }))
 }
 
 /**
