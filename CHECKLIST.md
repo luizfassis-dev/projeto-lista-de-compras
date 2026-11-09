@@ -46,8 +46,8 @@ ui.js    →  desenha a tela a partir dos dados
 
 ## [ ] 4. Marcar e desmarcar (`list.js` + `main.js`)
 
-- [ ] `toggleItem(items, id)`: nova lista com o `checked` do item invertido
-- [ ] Listener de `change` na `<ul>`
+- [x] `toggleItem(items, id)`: nova lista com o `checked` do item invertido
+- [x] Listener de `change` na `<ul>`
 
 **Pronto quando:** você marca um item, adiciona outro, e o primeiro continua marcado (prova de que o estado é a fonte de verdade).
 **Conceitos:** `map()`, spread de objeto `{ ...item, checked: !item.checked }`, delegação de eventos, `closest()`.

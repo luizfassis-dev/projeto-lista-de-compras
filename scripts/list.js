@@ -90,6 +90,15 @@ export function removeItem(items, id) {
  * @returns {Array<{id: string, name: string, checked: boolean}>}
  */
 export function toggleItem(items, id) {
-  // TODO (tarefa 4)
-  return items;
+  return items
+  .map(item => { 
+    if(item.id === id ){
+      return {
+        ...item,
+        checked: !item.checked
+      }      
+    }
+    return item
+  })
 }
+

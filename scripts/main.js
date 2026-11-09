@@ -36,6 +36,10 @@ elements.form.addEventListener("submit", (event) => {
 elements.list.addEventListener("change", (event) => {
   // TODO: descobrir o id do item (event.target.closest(".item").dataset.id)
   // TODO: items = toggleItem(...), renderList(items)
+
+  const elementCheckedId = event.target.closest(".item").dataset.id
+  items = toggleItem(items,elementCheckedId)
+  renderList(items)
 });
 
 // Remover (tarefa 5)
