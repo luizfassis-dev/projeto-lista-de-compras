@@ -67,7 +67,7 @@ export function renderList(items) {
 export function resetInput() {
   elements.input.value = ""
 
-  input.focus()
+  elements.input.focus()
 }
 
 /** Mostra o aviso "O item foi removido da lista". */

@@ -56,8 +56,8 @@ export function isValidName(name, items) {
  * @returns {{id: string, name: string, checked: boolean}}
  */
 export function createItem(name) {
-  // TODO (tarefa 3)
-  return { id: "", name, checked: false };
+  const id = crypto.randomUUID()
+  return { id, name, checked: false };
 }
 
 /**
@@ -67,7 +67,8 @@ export function createItem(name) {
  * @returns {Array<{id: string, name: string, checked: boolean}>}
  */
 export function addItem(items, name) {
-  // TODO (tarefa 3)
+  const item = createItem(name)
+  items = [...items, item]
   return items;
 }
 
