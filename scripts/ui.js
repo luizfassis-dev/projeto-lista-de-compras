@@ -58,7 +58,6 @@ export function renderList(items) {
   items.forEach((item) => {
     const listElement = createItemElement(item)
     elements.list.append(listElement)
-    
   })
   
   
@@ -66,7 +65,9 @@ export function renderList(items) {
 
 /** Limpa o campo e devolve o foco para ele, pronto para o próximo item. */
 export function resetInput() {
-  // TODO (tarefa 3)
+  elements.input.value = ""
+
+  input.focus()
 }
 
 /** Mostra o aviso "O item foi removido da lista". */

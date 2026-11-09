@@ -15,8 +15,8 @@ ui.js    →  desenha a tela a partir dos dados
 
 ## [ ] 1. Renderizar a lista (`ui.js`)
 
-- [ ] `createItemElement(item)`: clonar o `<template>` e preencher nome, checkbox, `data-id` e `aria-label`
-- [ ] `renderList(items)`: esvaziar a `<ul>` e adicionar um elemento por item
+- [x] `createItemElement(item)`: clonar o `<template>` e preencher nome, checkbox, `data-id` e `aria-label`
+- [x] `renderList(items)`: esvaziar a `<ul>` e adicionar um elemento por item
 
 **Pronto quando:** os 4 itens de exemplo aparecem na tela.
 **Conceitos:** `querySelector`, `<template>` e `cloneNode`, `textContent`, `dataset`, `forEach`/`for...of`.
@@ -25,9 +25,9 @@ ui.js    →  desenha a tela a partir dos dados
 
 ## [ ] 2. Validar o nome (`list.js`)
 
-- [ ] `normalizeName(name)`: remover espaços das pontas
-- [ ] `isValidName(name, items)`: recusar nome vazio
-- [ ] Desafio: recusar nome repetido, ignorando maiúsculas/minúsculas
+- [x] `normalizeName(name)`: remover espaços das pontas
+- [x] `isValidName(name, items)`: recusar nome vazio
+- [x] Desafio: recusar nome repetido, ignorando maiúsculas/minúsculas
 
 **Pronto quando:** no console, `isValidName("   ", [])` dá `false`.
 **Conceitos:** `trim()`, `toLowerCase()`, `some()`.
@@ -35,10 +35,10 @@ ui.js    →  desenha a tela a partir dos dados
 
 ## [ ] 3. Adicionar item (`list.js` + `ui.js` + `main.js`)
 
-- [ ] `createItem(name)`: gerar um id único (dica: `crypto.randomUUID()`)
-- [ ] `addItem(items, name)`: devolver uma **nova** lista, sem `push`
-- [ ] `resetInput()`: limpar o campo e devolver o foco
-- [ ] Listener de `submit` no `main.js`
+- [x] `createItem(name)`: gerar um id único (dica: `crypto.randomUUID()`)
+- [x] `addItem(items, name)`: devolver uma **nova** lista, sem `push`
+- [x] `resetInput()`: limpar o campo e devolver o foco
+- [x] Listener de `submit` no `main.js`
 
 **Pronto quando:** você digita, aperta Enter ou clica no botão, e o item aparece no fim da lista; espaços em branco não criam item.
 **Conceitos:** `event.preventDefault()`, spread `[...items, novo]`, imutabilidade.

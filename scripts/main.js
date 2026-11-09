@@ -4,7 +4,7 @@
  * Fluxo de toda ação:
  *   evento → função do list.js gera a nova lista → atualiza `items` → renderList(items)
  */
-import { normalizeName, isValidName, addItem, removeItem, toggleItem } from "./list.js";
+import { normalizeName, isValidName, addItem, removeItem, toggleItem, createItem } from "./list.js";
 import { elements, renderList, resetInput, showAlert, hideAlert } from "./ui.js";
 
 // Estado da aplicação: a única fonte de verdade. A tela é só um reflexo dele.
@@ -18,10 +18,15 @@ let items = [
 
 // Adicionar item (tarefa 3)
 elements.form.addEventListener("submit", (event) => {
-  // TODO: impedir o recarregamento da página
-  // TODO: normalizar o valor do campo
-  // TODO: se for inválido, parar aqui
-  // TODO: items = addItem(...), renderList(items), resetInput()
+  event.preventDefault()
+  let name = elements.input.value
+
+  name = normalizeName(name)
+  if(isValidName(name,items)){
+    items = addItem(items,name)
+    renderList(items)
+    resetInput()
+  }
 });
 
 // Marcar e remover usam UM listener só, na <ul> (delegação de eventos):
@@ -46,3 +51,4 @@ elements.alertClose.addEventListener("click", () => {
 
 // Primeira renderização
 renderList(items);
+
