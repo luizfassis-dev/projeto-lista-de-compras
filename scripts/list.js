@@ -79,9 +79,11 @@ export function addItem(items, name) {
  * @returns {Array<{id: string, name: string, checked: boolean}>}
  */
 export function removeItem(items, id) {
-  // TODO (tarefa 5)
-  return items;
+  return items.filter(item => {
+    return item.id !== id 
+  })
 }
+
 
 /**
  * Devolve uma NOVA lista com o `checked` do item invertido.

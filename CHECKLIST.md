@@ -55,8 +55,8 @@ ui.js    →  desenha a tela a partir dos dados
 
 ## [ ] 5. Remover item (`list.js` + `main.js`)
 
-- [ ] `removeItem(items, id)`: nova lista sem o item
-- [ ] Listener de `click` na `<ul>`, ignorando cliques fora da lixeira
+- [x] `removeItem(items, id)`: nova lista sem o item
+- [x] Listener de `click` na `<ul>`, ignorando cliques fora da lixeira
 
 **Pronto quando:** a lixeira remove só o item certo, inclusive itens recém-adicionados.
 **Conceitos:** `filter()`, `closest()`, retorno antecipado (`if (!button) return`).

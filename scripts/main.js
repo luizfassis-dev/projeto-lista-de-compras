@@ -46,6 +46,15 @@ elements.list.addEventListener("change", (event) => {
 elements.list.addEventListener("click", (event) => {
   // TODO: ignorar cliques que não foram no botão de remover (closest(".icon-button"))
   // TODO: items = removeItem(...), renderList(items), showAlert() (tarefa 6)
+  const button = event.target.closest(".icon-button")
+  if( !button ){
+    return
+  }
+  
+  const elementRemovedId = event.target.closest(".item").dataset.id
+  items = removeItem(items, elementRemovedId)
+  renderList(items)
+  
 });
 
 // Fechar o aviso (tarefa 6)
