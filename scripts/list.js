@@ -84,7 +84,6 @@ export function removeItem(items, id) {
   })
 }
 
-
 /**
  * Devolve uma NOVA lista com o `checked` do item invertido.
  * @param {Array<{id: string, name: string, checked: boolean}>} items
@@ -103,4 +102,5 @@ export function toggleItem(items, id) {
     return item
   })
 }
+
 

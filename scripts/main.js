@@ -5,7 +5,9 @@
  *   evento → função do list.js gera a nova lista → atualiza `items` → renderList(items)
  */
 import { normalizeName, isValidName, addItem, removeItem, toggleItem, createItem } from "./list.js";
-import { elements, renderList, resetInput, showAlert, hideAlert } from "./ui.js";
+import { elements, renderList, resetInput, showAlert, hideAlert, wait } from "./ui.js";
+
+let currentElementAwaitId = null
 
 // Estado da aplicação: a única fonte de verdade. A tela é só um reflexo dele.
 // Os ids fixos abaixo existem só para os dados de exemplo do Figma.
@@ -43,23 +45,33 @@ elements.list.addEventListener("change", (event) => {
 });
 
 // Remover (tarefa 5)
-elements.list.addEventListener("click", (event) => {
+elements.list.addEventListener("click", async (event) => {
   // TODO: ignorar cliques que não foram no botão de remover (closest(".icon-button"))
   // TODO: items = removeItem(...), renderList(items), showAlert() (tarefa 6)
   const button = event.target.closest(".icon-button")
   if( !button ){
     return
   }
-  
+
   const elementRemovedId = event.target.closest(".item").dataset.id
+  currentElementAwaitId = elementRemovedId
+
   items = removeItem(items, elementRemovedId)
   renderList(items)
+  showAlert()
+
+  await wait(3)
+  
+  if(currentElementAwaitId === elementRemovedId){
+    hideAlert()
+  }
   
 });
 
 // Fechar o aviso (tarefa 6)
 elements.alertClose.addEventListener("click", () => {
   // TODO: hideAlert()
+  hideAlert()
 });
 
 // Primeira renderização

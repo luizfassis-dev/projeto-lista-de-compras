@@ -64,9 +64,9 @@ ui.js    →  desenha a tela a partir dos dados
 
 ## [ ] 6. Aviso de remoção (`ui.js` + `main.js`)
 
-- [ ] `showAlert()` e `hideAlert()`: usar o atributo `hidden` (`element.hidden = true/false`)
-- [ ] Mostrar ao remover e fechar no "×"
-- [ ] Desafio: esconder sozinho depois de 3 segundos e reiniciar o tempo se outro item for removido
+- [x] `showAlert()` e `hideAlert()`: usar o atributo `hidden` (`element.hidden = true/false`)
+- [x] Mostrar ao remover e fechar no "×"
+- [x] Desafio: esconder sozinho depois de 3 segundos e reiniciar o tempo se outro item for removido
 
 **Conceitos:** propriedade `hidden`, `setTimeout` e `clearTimeout`.
 **Commit:** `feat(js): exibe aviso ao remover item`

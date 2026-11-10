@@ -73,9 +73,16 @@ export function resetInput() {
 /** Mostra o aviso "O item foi removido da lista". */
 export function showAlert() {
   // TODO (tarefa 6)
+  elements.alert.hidden = false
 }
 
+export async function wait(seconds){
+  return new Promise( resolve => {
+    setTimeout(resolve, seconds * 1000)
+  })
+}
 /** Esconde o aviso. */
 export function hideAlert() {
   // TODO (tarefa 6)
+  elements.alert.hidden = true
 }
